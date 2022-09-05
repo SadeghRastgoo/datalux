@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { appFunctionalitiesInterface } from "../../types";
 import toast from "react-hot-toast";
+import { LoadingSpinner } from "../Icons";
 
 const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
   appFunctionalities,
@@ -13,12 +14,14 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
     "/assets/memoji/apple-memoji-headwear-masks-hairstyles.png"
   );
   const [userName, setUserName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const changeSelectedMemoji = (src: string) => {
     setSelectedMemoji(src);
   };
 
   const saveUserProfile = () => {
+    setIsLoading(true);
     toast.promise(
       new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -26,6 +29,7 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
             resolve("Resolved");
             appFunctionalities.setUserProfile(userName, selectedMemoji);
             setLoginModalProgress(loginModalProgress + 1);
+            setIsLoading(false);
           } else {
             reject("Rejected");
             setTimeout(() => {
@@ -35,6 +39,7 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
                 "error"
               );
             }, 500);
+            setIsLoading(false);
           }
         }, 1000);
       }),
@@ -234,14 +239,23 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
             Back
           </button>
           <button
-            className="border border-[#4329e5] rounded-md bg-[#4329e5] transition-colors hover:bg-[#2508e2] text-white"
+            className={`border border-[#4329e5] rounded-md bg-[#4329e5] transition-colors hover:bg-[#2508e2] text-white ${
+              isLoading && "cursor-not-allowed opacity-75"
+            }`}
+            disabled={isLoading && true}
             onClick={() =>
               loginModalProgress < 2
                 ? setLoginModalProgress(loginModalProgress + 1)
                 : saveUserProfile()
             }
           >
-            {loginModalProgress === 2 ? "Let's Go" : "Continue"}
+            {isLoading ? (
+              <LoadingSpinner />
+            ) : loginModalProgress === 2 ? (
+              "Let's Go"
+            ) : (
+              "Continue"
+            )}
           </button>
         </footer>
       </div>
