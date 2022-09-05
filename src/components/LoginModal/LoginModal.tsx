@@ -74,8 +74,12 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
             <main className="flex flex-col gap-1 p-5 py-5">
               <h5 className="font-bold text-[#23293e]">Get Started</h5>
               <p className="font-light text-sm text-[#464445]">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius
-                omnis placeat ducimus quidem debitis perferendis.
+                Welcome to the datalux app. The app is still in development, so
+                some features may not work yet. This was built with{" "}
+                <span className="highlight">React</span>,{" "}
+                <span className="highlight">Vite</span>,{" "}
+                <span className="highlight">TypeScript</span>,{" "}
+                <span className="highlight">Tailwind</span>
               </p>
               <div className="flex gap-2 justify-center items-center mt-4">
                 <div className="w-1.5 aspect-square bg-[#2a2ce4] rounded-full"></div>

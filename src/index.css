@@ -163,3 +163,28 @@ body {
     transform: translateX(-50%) translateY(25px);
   }
 }
+
+.highlight {
+  position: relative;
+}
+.highlight::after {
+  content: "";
+  height: 30%;
+  position: absolute;
+  left: 0;
+  top: 65%;
+  width: 100%;
+  z-index: -1;
+}
+.highlight:nth-child(1)::after {
+  background-color: #5fd3f3;
+}
+.highlight:nth-child(2)::after {
+  background-color: #f2c023;
+}
+.highlight:nth-child(3)::after {
+  background-color: #2f71bc;
+}
+.highlight:nth-child(4)::after {
+  background-color: #38bdf9;
+}
