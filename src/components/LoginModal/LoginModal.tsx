@@ -90,6 +90,20 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
           </article>
           <article className="flex flex-col gap-4 min-w-full">
             <header className="h-48 bg-gradient-to-b from-[#e0e5fd] relative">
+              <span className="absolute top-5 left-1/2 -translate-x-1/2 text-xs opacity-10 font-mono">
+                111100000110011000011100110011110110011000011
+                111010001101010010110100000100110110011000011
+                001111111011011001010001010010000110011000011
+                100110101101000111011100011011000110011000011
+                100100100011011001101001001010010110011000011
+                001111111011011001010001010010000110011000011
+                011001100001101100110000110110011000011
+                01100110000110110011000011
+                <br />
+                011001100001101
+                <br />
+                011001
+              </span>
               <img
                 className="animated-image absolute left-1/2 -translate-x-1/2 p-4 w-1/2 max-w-full max-h-full object-cover"
                 src="/assets/data-vector.png"
