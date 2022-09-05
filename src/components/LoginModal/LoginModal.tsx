@@ -63,7 +63,7 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
           }`}
         >
           <article className="flex flex-col gap-4 min-w-full">
-            <header className="h-48 bg-gradient-to-b from-[#e0e5fd] rounded-md relative">
+            <header className="h-48 bg-gradient-to-b from-[#e0e5fd] relative">
               <div className="absolute border border-[#3f27dc72] outline outline-offset-8 bg-white bg-opacity-50 outline-[#cfcfcf] -top-20 left-1/2 -translate-x-1/2 rotate-45 w-44 aspect-square"></div>
               <img
                 className="relative z-20 w-full h-full object-contain p-6"
@@ -85,10 +85,10 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
             </main>
           </article>
           <article className="flex flex-col gap-4 min-w-full">
-            <header className="h-48 bg-gradient-to-b from-[#1c1e21] rounded-md relative">
+            <header className="h-48 bg-gradient-to-b from-[#e0e5fd] relative">
               <img
-                className="relative z-20 w-full h-full object-cover"
-                src="/assets/memoji/output-onlinegiftools.gif"
+                className="animated-image absolute left-1/2 -translate-x-1/2 p-4 w-1/2 max-w-full max-h-full object-cover"
+                src="/assets/data-vector.png"
                 alt=""
               />
             </header>
@@ -110,7 +110,7 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
             </main>
           </article>
           <article className="flex flex-col gap-4 min-w-full">
-            <header className="h-48 bg-gradient-to-b from-[#e0e5fd] rounded-md relative">
+            <header className="h-48 bg-gradient-to-b from-[#e0e5fd] relative">
               <img src="/assets/memoji/memoji-cover.png" alt="" />
               <img
                 className="absolute left-1/2 -translate-x-1/2 w-28 top-16 drop-shadow-lg"

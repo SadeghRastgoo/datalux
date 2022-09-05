@@ -150,3 +150,16 @@ body {
   z-index: 20;
   background: linear-gradient(to left, #ffffff, transparent);
 }
+
+.animated-image {
+  animation: animated-login-image infinite 2.5s alternate-reverse ease-in-out;
+}
+
+@keyframes animated-login-image {
+  0% {
+    transform: translateX(-50%) translateY(0px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(25px);
+  }
+}
