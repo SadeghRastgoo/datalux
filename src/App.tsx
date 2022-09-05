@@ -2,6 +2,7 @@ import { useState } from "react";
 import { appDataInterface, appFunctionalitiesInterface } from "./types";
 import PageLayout from "./components/Layout/PageLayout/PageLayout";
 import toast from "react-hot-toast";
+import LoginModal from "./components/LoginModal/LoginModal";
 
 function App() {
   const [appActionState, setAppActionState] = useState("");
@@ -117,6 +118,7 @@ function App() {
 
   return (
     <div className={darkToggle ? "dark" : ""}>
+      {<LoginModal />}
       <PageLayout appFunctionalities={appFunctionalities} />
     </div>
   );

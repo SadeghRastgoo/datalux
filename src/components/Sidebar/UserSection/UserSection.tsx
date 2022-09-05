@@ -13,7 +13,7 @@ const UserSection: FC<userSectionInterface> = ({ appFunctionalities }) => {
       <div className="aspect-square w-14 bg-[#e2e3e2] dark:bg-[#292929] p-1.5 rounded-full">
         <img
           className="w-full h-full object-contain"
-          src="/public/assets/memoji/apple-memoji-update-headwear-masks-hairstyles.png"
+          src="/public/assets/memoji/apple-memoji-headwear-masks-hairstyles.png"
           alt="User Avatar Memoji"
         />
       </div>

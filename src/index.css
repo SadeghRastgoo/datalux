@@ -129,3 +129,24 @@ body {
 .custom-gradient-2:hover::before {
   opacity: 1;
 }
+
+.memoji-picker-container::before {
+  content: "";
+  width: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+.memoji-picker-container::after {
+  content: "";
+  width: 40px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
