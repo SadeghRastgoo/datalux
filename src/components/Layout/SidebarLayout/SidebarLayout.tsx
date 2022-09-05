@@ -14,12 +14,15 @@ const SidebarLayout: FC<sidebarLayoutInterface> = ({ appFunctionalities }) => {
     <aside className="grid grid-cols-1 grid-rows-[auto_1fr_auto] gap-14 bg-[#f1f3f5] px-5 py-7 border border-[#e1e3e6]">
       {appFunctionalities.getAppActionState() === "" ? (
         <>
-          <UserSection />
+          <UserSection appFunctionalities={appFunctionalities} />
           <DataPages />
           <SidebarBottom />
         </>
       ) : (
-        <Form appFunctionalities={appFunctionalities} />
+        <Form
+          appFunctionalities={appFunctionalities}
+          editState={appFunctionalities.getAppActionState() === "edit" && true}
+        />
       )}
     </aside>
   );

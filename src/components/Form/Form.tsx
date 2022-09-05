@@ -1,11 +1,12 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { appFunctionalitiesInterface } from "../../types";
 
 interface formInterface {
   appFunctionalities: appFunctionalitiesInterface;
+  editState: boolean;
 }
 
-const Form: FC<formInterface> = ({ appFunctionalities }) => {
+const Form: FC<formInterface> = ({ appFunctionalities, editState = false }) => {
   const [companyNameInp, setCompanyNameInp] = useState("");
   const [companyStateInp, setCompanyStateInp] = useState("");
   const [companyEmployeeInp, setCompanyEmployeeInp] = useState("");
@@ -30,9 +31,42 @@ const Form: FC<formInterface> = ({ appFunctionalities }) => {
     }
   };
 
+  const applyChanges = (e: any) => {
+    e.preventDefault();
+    if (
+      !companyNameInp.length ||
+      !companyStateInp.length ||
+      !companyEmployeeInp.length
+    ) {
+      appFunctionalities.toastify("Please fill fields correctly", "", "error");
+    } else {
+      appFunctionalities.editItem(appFunctionalities.getSelectedData().id, {
+        name: companyNameInp,
+        state: companyStateInp,
+        employee: Number(companyEmployeeInp),
+      });
+      setCompanyNameInp("");
+      setCompanyStateInp("");
+      setCompanyEmployeeInp("");
+      appFunctionalities.changeAppActionState("");
+    }
+  };
+
+  useEffect(() => {
+    if (editState) {
+      setCompanyNameInp(appFunctionalities.getSelectedData().name);
+      setCompanyStateInp(appFunctionalities.getSelectedData().state);
+      setCompanyEmployeeInp(
+        appFunctionalities.getSelectedData().employee.toString()
+      );
+    }
+  }, []);
+
   return (
     <div>
-      <h3 className="text-xl font-bold text-[#3d4d63]">Add New Company</h3>
+      <h3 className="text-xl font-bold text-[#3d4d63]">
+        {!editState ? "Add New Company" : "Edit Selected Company"}
+      </h3>
       <form className="flex flex-col gap-5 my-8">
         <div className="flex flex-col gap-1">
           <label
@@ -94,9 +128,9 @@ const Form: FC<formInterface> = ({ appFunctionalities }) => {
           <button
             className="text-white text-sm py-2 cursor-pointer rounded-md font-semibold custom-gradient-1"
             type="submit"
-            onClick={(e) => addNewItem(e)}
+            onClick={(e) => (!editState ? addNewItem(e) : applyChanges(e))}
           >
-            Add Company
+            {!editState ? "Add Company" : "Apply Changes"}
           </button>
           <button
             className="text-white text-sm py-2 cursor-pointer rounded-md font-semibold custom-gradient-2 px-3"

@@ -7,6 +7,14 @@ interface tableRowInterface {
   stateCol: string;
   employeeCol: string | number;
   deleteTableRow: (rowId: number, itemName: string) => void;
+  editTableRow: (
+    rowId: number,
+    data: {
+      name: string;
+      state: string;
+      employee: number | string;
+    }
+  ) => void;
 }
 
 const TableRow: FC<tableRowInterface> = ({
@@ -15,14 +23,13 @@ const TableRow: FC<tableRowInterface> = ({
   stateCol,
   employeeCol,
   deleteTableRow,
+  editTableRow,
 }) => {
   const employeeFormatter = Intl.NumberFormat("en", { notation: "standard" });
 
   return (
     <div
-      className={`grid grid-cols-[1fr_1fr_1fr_75px] place-items-start text-xs text-[#5A6474] px-5 py-4 group ${
-        idCol % 2 === 0 && "bg-[#f8f8f8]"
-      }`}
+      className={`grid grid-cols-[1fr_1fr_1fr_75px] place-items-start text-xs text-[#5A6474] px-5 py-4 group border-l border-l-transparent hover:border-l odd:bg-[#f8f8f8]`}
     >
       <div className="font-semibold">{nameCol}</div>
       <div className="font-semibold">{stateCol}</div>
@@ -30,7 +37,16 @@ const TableRow: FC<tableRowInterface> = ({
         {employeeFormatter.format(Number(employeeCol))}
       </div>
       <div className="font-semibold flex items-center gap-4 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-        <button className="w-4 cursor-pointer">
+        <button
+          className="w-4 cursor-pointer"
+          onClick={() =>
+            editTableRow(idCol, {
+              name: nameCol,
+              state: stateCol,
+              employee: employeeCol,
+            })
+          }
+        >
           <PencilIcon />
         </button>
         <button

@@ -18,7 +18,7 @@ const BodyHeader: FC<bodyHeaderInterface> = ({ appFunctionalities }) => {
           type="text"
           name="searchbox"
           id=""
-          className="outline-none text-[#5A6474]"
+          className="outline-none text-[#5A6474] bg-transparent"
           placeholder="Search here ..."
         />
         <div className="bg-[#f1f2f3] rounded-full p-0.5 text-[#757D8A] cursor-pointer opacity-0">
