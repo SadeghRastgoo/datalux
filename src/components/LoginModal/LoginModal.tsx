@@ -10,7 +10,7 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
 }) => {
   const [loginModalProgress, setLoginModalProgress] = useState(0);
   const [selectedMemoji, setSelectedMemoji] = useState(
-    "/public/assets/memoji/apple-memoji-headwear-masks-hairstyles.png"
+    "/assets/memoji/apple-memoji-headwear-masks-hairstyles.png"
   );
   const [userName, setUserName] = useState("");
 
@@ -67,7 +67,7 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
               <div className="absolute border border-[#3f27dc72] outline outline-offset-8 bg-white bg-opacity-50 outline-[#cfcfcf] -top-20 left-1/2 -translate-x-1/2 rotate-45 w-44 aspect-square"></div>
               <img
                 className="relative z-20 w-full h-full object-contain p-6"
-                src="/public/assets/memoji/animated-memoji.gif"
+                src="/assets/memoji/animated-memoji.gif"
                 alt=""
               />
             </header>
@@ -88,7 +88,7 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
             <header className="h-48 bg-gradient-to-b from-[#1c1e21] rounded-md relative">
               <img
                 className="relative z-20 w-full h-full object-cover"
-                src="/public/assets/memoji/output-onlinegiftools.gif"
+                src="/assets/memoji/output-onlinegiftools.gif"
                 alt=""
               />
             </header>
@@ -111,7 +111,7 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
           </article>
           <article className="flex flex-col gap-4 min-w-full">
             <header className="h-48 bg-gradient-to-b from-[#e0e5fd] rounded-md relative">
-              <img src="/public/assets/memoji/memoji-cover.png" alt="" />
+              <img src="/assets/memoji/memoji-cover.png" alt="" />
               <img
                 className="absolute left-1/2 -translate-x-1/2 w-28 top-16 drop-shadow-lg"
                 src={selectedMemoji}
@@ -131,67 +131,67 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
                   <SwiperSlide>
                     <MemojiAvatars
                       changeSelectedMemoji={changeSelectedMemoji}
-                      src="/public/assets/memoji/apple-memoji-headwear-masks-hairstyles.png"
+                      src="/assets/memoji/apple-memoji-headwear-masks-hairstyles.png"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <MemojiAvatars
                       changeSelectedMemoji={changeSelectedMemoji}
-                      src="/public/assets/memoji/apple-memoji-blonde-girl-smile.png"
+                      src="/assets/memoji/apple-memoji-blonde-girl-smile.png"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <MemojiAvatars
                       changeSelectedMemoji={changeSelectedMemoji}
-                      src="/public/assets/memoji/apple-above-avalon-neil-cybart.png"
+                      src="/assets/memoji/apple-above-avalon-neil-cybart.png"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <MemojiAvatars
                       changeSelectedMemoji={changeSelectedMemoji}
-                      src="/public/assets/memoji/apple-memoji-headwear-masks-hairstyles-2.png"
+                      src="/assets/memoji/apple-memoji-headwear-masks-hairstyles-2.png"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <MemojiAvatars
                       changeSelectedMemoji={changeSelectedMemoji}
-                      src="/public/assets/memoji/apple-memoji-nurse-girl.png"
+                      src="/assets/memoji/apple-memoji-nurse-girl.png"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <MemojiAvatars
                       changeSelectedMemoji={changeSelectedMemoji}
-                      src="/public/assets/memoji/apple-memoji-educated-girl-hat.png"
+                      src="/assets/memoji/apple-memoji-educated-girl-hat.png"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <MemojiAvatars
                       changeSelectedMemoji={changeSelectedMemoji}
-                      src="/public/assets/memoji/apple-memoji-sport-man.png"
+                      src="/assets/memoji/apple-memoji-sport-man.png"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <MemojiAvatars
                       changeSelectedMemoji={changeSelectedMemoji}
-                      src="/public/assets/memoji/apple-memoji-swimmer-girl.png"
+                      src="/assets/memoji/apple-memoji-swimmer-girl.png"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <MemojiAvatars
                       changeSelectedMemoji={changeSelectedMemoji}
-                      src="/public/assets/memoji/apple-memoji-nerd-boy.png"
+                      src="/assets/memoji/apple-memoji-nerd-boy.png"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <MemojiAvatars
                       changeSelectedMemoji={changeSelectedMemoji}
-                      src="/public/assets/memoji/apple-memoji-sport-girl-hat.png"
+                      src="/assets/memoji/apple-memoji-sport-girl-hat.png"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
                     <MemojiAvatars
                       changeSelectedMemoji={changeSelectedMemoji}
-                      src="/public/assets/memoji/apple-memoji-colorful-girl.png"
+                      src="/assets/memoji/apple-memoji-colorful-girl.png"
                     />
                   </SwiperSlide>
                 </Swiper>
