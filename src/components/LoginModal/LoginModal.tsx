@@ -1,10 +1,50 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import MemojiAvatars from "./MemojiAvatars";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { appFunctionalitiesInterface } from "../../types";
+import toast from "react-hot-toast";
 
-const LoginModal = () => {
+const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
+  appFunctionalities,
+}) => {
   const [loginModalProgress, setLoginModalProgress] = useState(0);
+  const [selectedMemoji, setSelectedMemoji] = useState(
+    "/public/assets/memoji/apple-memoji-headwear-masks-hairstyles.png"
+  );
+  const [userName, setUserName] = useState("");
+
+  const changeSelectedMemoji = (src: string) => {
+    setSelectedMemoji(src);
+  };
+
+  const saveUserProfile = () => {
+    toast.promise(
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (userName) {
+            resolve("Resolved");
+            appFunctionalities.setUserProfile(userName, selectedMemoji);
+            setLoginModalProgress(loginModalProgress + 1);
+          } else {
+            reject("Rejected");
+            setTimeout(() => {
+              appFunctionalities.toastify(
+                "Please fill out name field",
+                "",
+                "error"
+              );
+            }, 500);
+          }
+        }, 1000);
+      }),
+      {
+        loading: "Saving...",
+        success: <b>User profile saved</b>,
+        error: <b>Could not save</b>,
+      }
+    );
+  };
 
   return (
     <div
@@ -59,7 +99,8 @@ const LoginModal = () => {
                 placeholder="e.g Sadegh Rastgoo"
                 type="text"
                 id="inp-employee"
-                maxLength={20}
+                maxLength={15}
+                onChange={(e) => setUserName(e.target.value)}
               />
               <div className="flex gap-2 justify-center items-center mt-4">
                 <div className="w-1.5 aspect-square bg-[#cfcfcf] rounded-full"></div>
@@ -71,6 +112,11 @@ const LoginModal = () => {
           <article className="flex flex-col gap-4 min-w-full">
             <header className="h-48 bg-gradient-to-b from-[#e0e5fd] rounded-md relative">
               <img src="/public/assets/memoji/memoji-cover.png" alt="" />
+              <img
+                className="absolute left-1/2 -translate-x-1/2 w-28 top-16 drop-shadow-lg"
+                src={selectedMemoji}
+                alt="selected memoji avatar"
+              />
             </header>
             <main className="flex flex-col gap-1 p-5 py-5">
               <h5 className="font-bold text-[#23293e]">
@@ -83,37 +129,70 @@ const LoginModal = () => {
                   slidesPerView={6}
                 >
                   <SwiperSlide>
-                    <MemojiAvatars src="/public/assets/memoji/apple-memoji-headwear-masks-hairstyles.png" />
+                    <MemojiAvatars
+                      changeSelectedMemoji={changeSelectedMemoji}
+                      src="/public/assets/memoji/apple-memoji-headwear-masks-hairstyles.png"
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <MemojiAvatars src="/public/assets/memoji/apple-memoji-blonde-girl-smile.png" />
+                    <MemojiAvatars
+                      changeSelectedMemoji={changeSelectedMemoji}
+                      src="/public/assets/memoji/apple-memoji-blonde-girl-smile.png"
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <MemojiAvatars src="/public/assets/memoji/apple-above-avalon-neil-cybart.png" />
+                    <MemojiAvatars
+                      changeSelectedMemoji={changeSelectedMemoji}
+                      src="/public/assets/memoji/apple-above-avalon-neil-cybart.png"
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <MemojiAvatars src="/public/assets/memoji/apple-memoji-headwear-masks-hairstyles-2.png" />
+                    <MemojiAvatars
+                      changeSelectedMemoji={changeSelectedMemoji}
+                      src="/public/assets/memoji/apple-memoji-headwear-masks-hairstyles-2.png"
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <MemojiAvatars src="/public/assets/memoji/apple-memoji-nurse-girl.png" />
+                    <MemojiAvatars
+                      changeSelectedMemoji={changeSelectedMemoji}
+                      src="/public/assets/memoji/apple-memoji-nurse-girl.png"
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <MemojiAvatars src="/public/assets/memoji/apple-memoji-educated-girl-hat.png" />
+                    <MemojiAvatars
+                      changeSelectedMemoji={changeSelectedMemoji}
+                      src="/public/assets/memoji/apple-memoji-educated-girl-hat.png"
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <MemojiAvatars src="/public/assets/memoji/apple-memoji-sport-man.png" />
+                    <MemojiAvatars
+                      changeSelectedMemoji={changeSelectedMemoji}
+                      src="/public/assets/memoji/apple-memoji-sport-man.png"
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <MemojiAvatars src="/public/assets/memoji/apple-memoji-swimmer-girl.png" />
+                    <MemojiAvatars
+                      changeSelectedMemoji={changeSelectedMemoji}
+                      src="/public/assets/memoji/apple-memoji-swimmer-girl.png"
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <MemojiAvatars src="/public/assets/memoji/apple-memoji-nerd-boy.png" />
+                    <MemojiAvatars
+                      changeSelectedMemoji={changeSelectedMemoji}
+                      src="/public/assets/memoji/apple-memoji-nerd-boy.png"
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <MemojiAvatars src="/public/assets/memoji/apple-memoji-sport-girl-hat.png" />
+                    <MemojiAvatars
+                      changeSelectedMemoji={changeSelectedMemoji}
+                      src="/public/assets/memoji/apple-memoji-sport-girl-hat.png"
+                    />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <MemojiAvatars src="/public/assets/memoji/apple-memoji-colorful-girl.png" />
+                    <MemojiAvatars
+                      changeSelectedMemoji={changeSelectedMemoji}
+                      src="/public/assets/memoji/apple-memoji-colorful-girl.png"
+                    />
                   </SwiperSlide>
                 </Swiper>
               </div>
@@ -127,14 +206,22 @@ const LoginModal = () => {
         </div>
         <footer className="grid grid-cols-2 gap-2 mb-5 h-9 text-sm font-semibold mt-4 px-5">
           <button
-            className="border border-[#e2e2e3] rounded-md text-[#292e42] transition-colors hover:bg-[#f3f3f3]"
+            className={`border border-[#e2e2e3] rounded-md text-[#292e42] transition-colors hover:bg-[#f3f3f3] ${
+              loginModalProgress === 0 &&
+              "opacity-50 cursor-not-allowed hover:bg-[#ffffff]"
+            }`}
+            disabled={loginModalProgress === 0 && true}
             onClick={() => setLoginModalProgress(loginModalProgress - 1)}
           >
             Back
           </button>
           <button
             className="border border-[#4329e5] rounded-md bg-[#4329e5] transition-colors hover:bg-[#2508e2] text-white"
-            onClick={() => setLoginModalProgress(loginModalProgress + 1)}
+            onClick={() =>
+              loginModalProgress < 2
+                ? setLoginModalProgress(loginModalProgress + 1)
+                : saveUserProfile()
+            }
           >
             {loginModalProgress === 2 ? "Let's Go" : "Continue"}
           </button>

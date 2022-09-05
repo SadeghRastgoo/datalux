@@ -12,8 +12,10 @@ const UserSection: FC<userSectionInterface> = ({ appFunctionalities }) => {
     <div className="grid grid-cols-[auto_1fr_auto] gap-3">
       <div className="aspect-square w-14 bg-[#e2e3e2] dark:bg-[#292929] p-1.5 rounded-full">
         <img
-          className="w-full h-full object-contain"
-          src="/public/assets/memoji/apple-memoji-headwear-masks-hairstyles.png"
+          className={`w-full h-full object-contain ${
+            appFunctionalities.getUserProfile().userAvatar || "hidden"
+          }`}
+          src={appFunctionalities.getUserProfile().userAvatar}
           alt="User Avatar Memoji"
         />
       </div>
@@ -22,7 +24,7 @@ const UserSection: FC<userSectionInterface> = ({ appFunctionalities }) => {
           Welcome Back,
         </span>
         <span className="text-[#586476] dark:text-[#888888] text-lg font-bold leading-tight ">
-          Sadegh Rastgoo
+          {appFunctionalities.getUserProfile().username || "Guest User"}
         </span>
       </div>
       <div className="flex gap-1 items-center">

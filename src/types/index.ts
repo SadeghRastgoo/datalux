@@ -8,6 +8,8 @@ export interface newItemInterface {
 
 export interface appFunctionalitiesInterface {
   changeAppActionState: (stateAction: string) => void
+  setUserProfile: (username: string, avatarSrc: string) => void
+  getUserProfile: () => {username: string, userAvatar: string}
   toggleDarkMode: () => void
   getAppActionState: () => string
   getAppData: () => appDataInterface[]

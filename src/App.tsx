@@ -7,6 +7,10 @@ import LoginModal from "./components/LoginModal/LoginModal";
 function App() {
   const [appActionState, setAppActionState] = useState("");
   const [darkToggle, setDarkToggle] = useState(false);
+  const [userProfile, setUserProfile] = useState({
+    username: "",
+    userAvatar: "",
+  });
   const [appData, setAppData] = useState<appDataInterface[]>([
     {
       title: "Company Directory",
@@ -36,6 +40,15 @@ function App() {
   const appFunctionalities: appFunctionalitiesInterface = {
     changeAppActionState: (actionState: string) => {
       setAppActionState(actionState);
+    },
+    setUserProfile: (username: string, avatarSrc: string) => {
+      setUserProfile({
+        username: username,
+        userAvatar: avatarSrc,
+      });
+    },
+    getUserProfile: () => {
+      return userProfile;
     },
     toggleDarkMode: () => {
       setDarkToggle(!darkToggle);
@@ -118,7 +131,7 @@ function App() {
 
   return (
     <div className={darkToggle ? "dark" : ""}>
-      {<LoginModal />}
+      {<LoginModal appFunctionalities={appFunctionalities} />}
       <PageLayout appFunctionalities={appFunctionalities} />
     </div>
   );
