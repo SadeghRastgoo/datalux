@@ -64,7 +64,7 @@ const Form: FC<formInterface> = ({ appFunctionalities, editState = false }) => {
 
   return (
     <div>
-      <h3 className="text-xl font-bold text-[#3d4d63]">
+      <h3 className="text-xl font-bold text-[#3d4d63] dark:text-[#aaaaab]">
         {!editState ? "Add New Company" : "Edit Selected Company"}
       </h3>
       <form className="flex flex-col gap-5 my-8">
@@ -76,7 +76,7 @@ const Form: FC<formInterface> = ({ appFunctionalities, editState = false }) => {
             Company Name:
           </label>
           <input
-            className="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:outline focus:outline-2 transition-all focus:border-blue-500 focus:outline-blue-200 block w-full py-2 px-3"
+            className="bg-gray-50 dark:bg-[#20242b] dark:focus:outline-neutral-700 dark:text-[#aaa] dark:placeholder:text-[#666] dark:border-gray-700 border border-gray-300 text-gray-800 text-sm rounded-md focus:outline focus:outline-2 transition-all focus:border-blue-500 focus:outline-blue-200 block w-full py-2 px-3"
             placeholder="e.g Apple inc."
             type="text"
             id="inp-name"
@@ -93,7 +93,7 @@ const Form: FC<formInterface> = ({ appFunctionalities, editState = false }) => {
             Company State:
           </label>
           <input
-            className="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:outline focus:outline-2 transition-all focus:border-blue-500 focus:outline-blue-200 block w-full py-2 px-3"
+            className="bg-gray-50 dark:bg-[#20242b] dark:focus:outline-neutral-700 dark:text-[#aaa] dark:placeholder:text-[#666] dark:border-gray-700 border border-gray-300 text-gray-800 text-sm rounded-md focus:outline focus:outline-2 transition-all focus:border-blue-500 focus:outline-blue-200 block w-full py-2 px-3"
             placeholder="e.g California"
             type="text"
             id="inp-state"
@@ -110,7 +110,7 @@ const Form: FC<formInterface> = ({ appFunctionalities, editState = false }) => {
             Company Employees:
           </label>
           <input
-            className="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-md focus:outline focus:outline-2 transition-all focus:border-blue-500 focus:outline-blue-200 block w-full py-2 px-3"
+            className="bg-gray-50 dark:bg-[#20242b] dark:focus:outline-neutral-700 dark:text-[#aaa] dark:placeholder:text-[#666] dark:border-gray-700 border border-gray-300 text-gray-800 text-sm rounded-md focus:outline focus:outline-2 transition-all focus:border-blue-500 focus:outline-blue-200 block w-full py-2 px-3"
             placeholder="e.g 13,400"
             type="text"
             id="inp-employee"
@@ -126,14 +126,14 @@ const Form: FC<formInterface> = ({ appFunctionalities, editState = false }) => {
         </div>
         <div className="grid grid-cols-[1fr_auto] gap-2 mt-2">
           <button
-            className="text-white text-sm py-2 cursor-pointer rounded-md font-semibold custom-gradient-1"
+            className="text-white dark:text-[#ddd] text-sm py-2 cursor-pointer rounded-md font-semibold custom-gradient-1"
             type="submit"
             onClick={(e) => (!editState ? addNewItem(e) : applyChanges(e))}
           >
             {!editState ? "Add Company" : "Apply Changes"}
           </button>
           <button
-            className="text-white text-sm py-2 cursor-pointer rounded-md font-semibold custom-gradient-2 px-3"
+            className="text-white dark:text-[#ddd] text-sm py-2 cursor-pointer rounded-md font-semibold custom-gradient-2 px-3"
             type="submit"
             onClick={() => appFunctionalities.changeAppActionState("")}
           >

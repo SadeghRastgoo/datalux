@@ -11,7 +11,7 @@ interface sidebarLayoutInterface {
 
 const SidebarLayout: FC<sidebarLayoutInterface> = ({ appFunctionalities }) => {
   return (
-    <aside className="grid grid-cols-1 grid-rows-[auto_1fr_auto] gap-14 bg-[#f1f3f5] px-5 py-7 border border-[#e1e3e6]">
+    <aside className="grid grid-cols-1 grid-rows-[auto_1fr_auto] gap-14 bg-[#f1f3f5] px-5 py-7 border-r border-[#e1e3e6] dark:bg-[#121418] dark:border-[#2c2c2c]">
       {appFunctionalities.getAppActionState() === "" ? (
         <>
           <UserSection appFunctionalities={appFunctionalities} />

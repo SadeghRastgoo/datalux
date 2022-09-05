@@ -25,7 +25,7 @@ const Table: FC<tableInterface> = ({ appFunctionalities }) => {
 
   return (
     <div className="grid-cols-1">
-      <div className="grid grid-cols-[1fr_1fr_1fr_75px] place-items-start text-xs text-[#5A6474] px-5 py-4">
+      <div className="grid grid-cols-[1fr_1fr_1fr_75px] place-items-start text-xs text-[#5A6474] dark:text-[#959595] px-5 py-4">
         {appFunctionalities.getAppData()[0].headers.map((item, index) => (
           <div key={index} className="font-medium">
             {item}

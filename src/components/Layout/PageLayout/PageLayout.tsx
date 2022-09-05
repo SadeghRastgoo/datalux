@@ -11,7 +11,7 @@ interface pageLayoutInterface {
 const PageLayout: FC<pageLayoutInterface> = ({ appFunctionalities }) => {
   return (
     <>
-      <div className="grid grid-cols-[350px_1fr] min-h-screen bg-white dark:bg-[#202125]">
+      <div className="grid grid-cols-[350px_1fr] min-h-screen bg-white dark:bg-[#1b1f25]">
         <SidebarLayout appFunctionalities={appFunctionalities} />
         <BodyLayout appFunctionalities={appFunctionalities} />
       </div>

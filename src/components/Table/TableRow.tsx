@@ -29,7 +29,7 @@ const TableRow: FC<tableRowInterface> = ({
 
   return (
     <div
-      className={`grid grid-cols-[1fr_1fr_1fr_75px] place-items-start text-xs text-[#5A6474] px-5 py-4 group border-l border-l-transparent hover:border-l odd:bg-[#f8f8f8]`}
+      className={`grid grid-cols-[1fr_1fr_1fr_75px] place-items-start text-xs text-[#5A6474] dark:text-[#656565] px-5 py-4 group border-l border-l-transparent hover:border-l odd:bg-[#f8f8f8] dark:odd:bg-[#20242b]`}
     >
       <div className="font-semibold">{nameCol}</div>
       <div className="font-semibold">{stateCol}</div>

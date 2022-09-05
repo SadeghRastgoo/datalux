@@ -4,7 +4,7 @@ import { ChatIcon, SignOutIcon } from "../../Icons";
 const SidebarBottom = () => {
   return (
     <div>
-      <ul className="flex flex-col gap-2 text-[#757D8A] text-sm">
+      <ul className="flex flex-col gap-2 text-[#757D8A] dark:text-text-neutral-400 text-sm">
         <SidebarBottomItem title="Support" Icon={<ChatIcon />} />
         <SidebarBottomItem title="Sign Out" Icon={<SignOutIcon />} />
       </ul>
