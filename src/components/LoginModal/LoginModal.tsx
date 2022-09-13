@@ -6,13 +6,14 @@ import { appFunctionalitiesInterface } from "../../types";
 import toast from "react-hot-toast";
 import { LoadingSpinner } from "../Icons";
 import * as appleMemojis from "./../../assets/memoji";
+import * as appAssets from "./../../assets/imgs";
 
 const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
   appFunctionalities,
 }) => {
   const [loginModalProgress, setLoginModalProgress] = useState(0);
   const [selectedMemoji, setSelectedMemoji] = useState(
-    "/assets/memoji/apple-memoji-headwear-masks-hairstyles.png"
+    appleMemojis.appleMemoji6
   );
   const [userName, setUserName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -73,7 +74,7 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
               <div className="absolute border border-[#3f27dc72] outline outline-offset-8 bg-white bg-opacity-50 outline-[#cfcfcf] -top-20 left-1/2 -translate-x-1/2 rotate-45 w-44 aspect-square"></div>
               <img
                 className="relative z-20 w-full h-full object-contain p-6"
-                src={appleMemojis.animatedMemoji}
+                src={appAssets.animatedMemoji}
                 alt=""
               />
             </header>
@@ -112,7 +113,7 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
               </span>
               <img
                 className="animated-image absolute left-1/2 -translate-x-1/2 p-4 w-1/2 max-w-full max-h-full object-cover"
-                src={appleMemojis.databaseVector}
+                src={appAssets.databaseVector}
                 alt=""
               />
             </header>
@@ -135,7 +136,7 @@ const LoginModal: FC<{ appFunctionalities: appFunctionalitiesInterface }> = ({
           </article>
           <article className="flex flex-col gap-4 min-w-full">
             <header className="h-48 bg-gradient-to-b from-[#e0e5fd] relative">
-              <img src={appleMemojis.appleMemojiCover} alt="" />
+              <img src={appAssets.appleMemojiCover} alt="" />
               <img
                 className="absolute left-1/2 -translate-x-1/2 w-28 top-16 drop-shadow-lg"
                 src={selectedMemoji}
