@@ -3,11 +3,11 @@
   <br>
   <a href="https://github.com/SadeghRastgoo/datalux"><img src="./public/vite.svg" alt="vite logo" width="125"></a>
   <br>
-  Markdownify
+  Datalux
   <br>
 </h1>
 
-<h4 align="center">A minimal Markdown Editor desktop app built on top of <a href="http://electron.atom.io" target="_blank">Electron</a>.</h4>
+<h4 align="center">A place for your <a href="http://electron.atom.io" target="_blank">Data</a>.</h4>
 
 <p align="center">
   <a href="https://badge.fury.io/js/electron-markdownify">
